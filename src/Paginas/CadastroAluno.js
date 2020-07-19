@@ -1,12 +1,15 @@
 import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
+
 import {
   Button, Grid, TextField, Typography, Container, InputAdornment, Divider
 } from '@material-ui/core'
-import { 
-  PersonIcon, CallIcon, DescriptionIcon , TodayIcon, EmailIcon
-} from "@material-ui/icons";
+import PersonIcon from '@material-ui/icons/Person';
+import CallIcon from '@material-ui/icons/Call';
+import DescriptionIcon from '@material-ui/icons/Description';
+import TodayIcon from '@material-ui/icons/Today';
+import EmailIcon from '@material-ui/icons/Email';
 
 import EstiloTextField from '../Componentes/EstiloTextField'
 import EstiloMask from '../Componentes/EstiloMask'
