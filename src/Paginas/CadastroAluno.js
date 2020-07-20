@@ -63,30 +63,66 @@ function CadastroAluno (){
                           <Grid item md={1}>
                             <PersonIcon />
                           </Grid>
-                          <Grid item md={10} style={{marginTop: '5px'}}>
-                            <EstiloTextField id="nome" label="Nome" />
+                          <Grid item md={11} style={{marginTop: '9%'}}>
+                            <EstiloTextField id="nome" label="Nome" required/>
                           </Grid>
                         </Grid>
-                        <TextField className={classes.text} id="Telefone" fullWidth variant="outlined" placeholder="(__)____-____" size="small" inputProps={{maxLength :11}} 
-                        InputProps={{startAdornment: (<InputAdornment position="start"> <CallIcon /></InputAdornment>),}} required/><br/>
-                        <TextField className={classes.text} id="RM" fullWidth variant="outlined" size="small" placeholder="RM"
-                        InputProps={{startAdornment: (<InputAdornment position="start"> <DescriptionIcon /></InputAdornment>),}} required/><br/>
-                        <TextField className={classes.text} id="dataNascimento" fullWidth variant="outlined" size="small" placeholder="Data Nascimento"
-                        InputProps={{startAdornment: (<InputAdornment position="start"> <TodayIcon /></InputAdornment>),}} required/><br/>
-                        <TextField className={classes.text} id="dataMatricula" fullWidth variant="outlined" size="small" placeholder="Data Matricula"
-                        InputProps={{startAdornment: (<InputAdornment position="start"> <TodayIcon /></InputAdornment>),}} required/><br/>
-                        <TextField className={classes.text} id="cep" fullWidth variant="outlined" placeholder="CEP" size="small"
-                        InputProps={{startAdornment: (<InputAdornment position="start"> <DescriptionIcon /></InputAdornment>),}} required/><br/>
+                        <Grid container spacing={1} alignItems="flex-end">
+                          <Grid item md={1}>
+                            <CallIcon />
+                          </Grid>
+                          <Grid item md={11} style={{marginTop: '5px'}}>
+                            <EstiloMask id="Telefone" label="Telefone" mask={'(99)99999-9999'} required/>
+                          </Grid>
+                        </Grid>
                         <Grid container spacing={1} alignItems="flex-end">
                           <Grid item md={1}>
                             <DescriptionIcon />
                           </Grid>
-                          <Grid item md={10} style={{marginTop: '5px'}}>
-                            <EstiloMask id="cpf" label="CPF Responsavel" mask={'999.999.999-99'} />
+                          <Grid item md={11} style={{marginTop: '5px'}}>
+                            <EstiloTextField id="rm" label="RM" required/>
                           </Grid>
                         </Grid>
-                        <TextField className={classes.text} id="email" fullWidth variant="outlined" placeholder="exemplo@exemplo.com" size="small"
-                        InputProps={{startAdornment: (<InputAdornment position="start"> <EmailIcon /></InputAdornment>),}} required/><br/>
+                        <Grid container spacing={1} alignItems="flex-end">
+                          <Grid item md={1}>
+                            <TodayIcon />
+                          </Grid>
+                          <Grid item md={11} style={{marginTop: '5px'}}>
+                            <EstiloMask id="dataNascimento" label="Data Nascimento" mask={'99/99/9999'} required/>
+                          </Grid>
+                        </Grid>
+                        <Grid container spacing={1} alignItems="flex-end">
+                          <Grid item md={1}>
+                            <TodayIcon />
+                          </Grid>
+                          <Grid item md={11} style={{marginTop: '5px'}}>
+                            <EstiloMask id="dataMatricula" label="Data Matricula" mask={'99/99/9999'} required/>
+                          </Grid>
+                        </Grid>
+                        <Grid container spacing={1} alignItems="flex-end">
+                          <Grid item md={1}>
+                            <DescriptionIcon />
+                          </Grid>
+                          <Grid item md={11} style={{marginTop: '5px'}}>
+                            <EstiloMask id="CEP" label="CEP" mask={'99999-999'} required/>
+                          </Grid>
+                        </Grid>
+                        <Grid container spacing={1} alignItems="flex-end">
+                          <Grid item md={1}>
+                            <DescriptionIcon />
+                          </Grid>
+                          <Grid item md={11} style={{marginTop: '5px'}}>
+                            <EstiloMask id="cpf" label="CPF Responsavel" mask={'999.999.999-99'} required/>
+                          </Grid>
+                        </Grid>
+                        <Grid container spacing={1} alignItems="flex-end">
+                          <Grid item md={1}>
+                            <EmailIcon />
+                          </Grid>
+                          <Grid item md={11} style={{marginTop: '5px'}}>
+                            <EstiloTextField id="email" label="E-mail" placeholder="exemplo@exemplo.com" type="email" required/>
+                          </Grid>
+                        </Grid>
 
                         <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} >Cadastrar</Button>
                 </form>
