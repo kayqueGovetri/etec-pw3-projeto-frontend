@@ -7,6 +7,10 @@ import { Face, Fingerprint } from '@material-ui/icons'
 import Logar from '../Requisições/Usuario.js'
 import { makeStyles } from '@material-ui/core/styles';
 import Axios from 'axios';
+import {
+    Redirect, Link
+  } from "react-router-dom";
+  
 
 // var axios = require("axios");
 
@@ -58,17 +62,18 @@ function Login() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     
-    
+    const [redirect, setRedirect] = useState(false)
 
     function handleInsert(event){
         event.preventDefault();
 
+        Logar({email, senha});
+        
+        if(localStorage.getItem('token')){
+            setRedirect(true)
+        }
         setEmail('');
         setSenha('');
-        
-        Logar({email, senha});
-
-        alert('Parabéns ' + email + ', seu login foi realizado com sucesso!');
     }
 
     //#endregion
@@ -150,6 +155,7 @@ function Login() {
             </Grid>
             
             <Grid item xls={0} sm={4} xlg={5}/>
+            {redirect && (<Redirect to="/" push />)}
         </Grid>
     );
 }

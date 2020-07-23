@@ -3,6 +3,7 @@ import {
   BrowserRouter,
   Switch,
   Route,
+  Redirect
 } from "react-router-dom";
 
 import App from "../src/Paginas/App"
@@ -18,15 +19,18 @@ const Rotas = () => (
   <>
     <BrowserRouter>
       <Switch>
-          <Route path="/" exact={true} component={App} />
           <Route path="/login" exact={true} component={Login} />
-          <Route path="/aluno/cadastro" exact={true} component={CadastroAluno} />
-          <Route path="/professor/cadastro" exact={true} component={CadastroProfessor} />
-          <Route path="/materia/cadastro" exact={true} component={CadastroMateria} />
-          <Route path="/aula/cadastro" exact={true} component={CadastroAula} />
-          <Route path="/turma/cadastro" exact={true} component={CadastroTurma} />
-
-
+          {localStorage.getItem('token') && (
+            <>
+              <Route path="/" exact={true} component={App} />
+              <Route path="/aluno/cadastro" exact={true} component={CadastroAluno} />
+              <Route path="/professor/cadastro" exact={true} component={CadastroProfessor} />
+              <Route path="/materia/cadastro" exact={true} component={CadastroMateria} />
+              <Route path="/aula/cadastro" exact={true} component={CadastroAula} />
+              <Route path="/turma/cadastro" exact={true} component={CadastroTurma} />
+            </>)
+          }
+          {!localStorage.getItem('token') && (<Route path="*" render={() => <Redirect to="/login" /> }/>) }
       </Switch>
     </BrowserRouter>
   </>
