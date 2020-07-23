@@ -13,7 +13,7 @@ import CadastroProfessor from "../src/Paginas/CadastroProfessor"
 import CadastroMateria from "../src/Paginas/CadastroMateria"
 import CadastroAula from "../src/Paginas/CadastroAula"
 import CadastroTurma from "../src/Paginas/CadastroTurma"
-
+import CadastroNota from "../src/Paginas/CadastroNota"
 
 const Rotas = () => (
   <>

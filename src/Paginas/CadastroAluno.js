@@ -37,7 +37,7 @@ function CadastroAluno (){
 
 
 
-  useEffect(() => {axios.get(`http://localhost:3001/turmas`, {headers:  { 'Authorization': `Bearer ${localStorage.getItem('token')}` }})
+  useEffect(() => {axios.get(`https://pw3-etec-projeto-backend.herokuapp.com/turmas`, {headers:  { 'Authorization': `Bearer ${localStorage.getItem('token')}` }})
   .then(res => {
     // const professor = res.data;
     setTurma(res.data);

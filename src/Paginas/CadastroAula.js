@@ -44,13 +44,13 @@ function CadastroMateria (){
 // let professores = professorReq.GetProfessores();
 
 
-  useEffect(() => {axios.get(`http://localhost:3001/professores`, {headers:  { 'Authorization': `Bearer ${localStorage.getItem('token')}` }})
+  useEffect(() => {axios.get(`https://pw3-etec-projeto-backend.herokuapp.com/professores`, {headers:  { 'Authorization': `Bearer ${localStorage.getItem('token')}` }})
   .then(res => {
     // const professor = res.data;
     setProfessores(res.data);
   })},[])
 
-  useEffect(() => {axios.get(`http://localhost:3001/materias`, {headers:  { 'Authorization': `Bearer ${localStorage.getItem('token')}` }})
+  useEffect(() => {axios.get(`https://pw3-etec-projeto-backend.herokuapp.com/materias`, {headers:  { 'Authorization': `Bearer ${localStorage.getItem('token')}` }})
   .then(res => {
     // const professor = res.data;
     setMaterias(res.data);

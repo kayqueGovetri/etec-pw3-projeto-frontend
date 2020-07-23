@@ -19,20 +19,20 @@ import EstiloDropDown from '../Componentes/EstiloDropDown'
 
 import '../Estilizacao.css';
 
-import TurmaReq from '../Requisições/Turma'
+import NotaReq from '../Requisições/Nota';
 var axios = require("axios");
 
 
-function CadastroMateria (){
+function CadastroNota (){
 
   //#region states e chama do axios
-  const [semestre, setSemestre] = useState('');
-  const [curso, setCurso] = useState('');
+  const [nota, setNota] = useState('');
   const [_aulas, setAulaSelecionada] = useState('');
   const[aulas, setAulas] = useState('');
+  const [_alunos, setAlunoSelecionada] = useState('');
+  const[alunos, setAlunos] = useState('');
 
 
-  const turmaReq = new TurmaReq();
   
 //     function  ListaProfessores(){
 //     return  professorReq.GetProfessores();
@@ -48,19 +48,26 @@ function CadastroMateria (){
     setAulas(res.data);
   })},[])
 
+  useEffect(() => {axios.get(`https://pw3-etec-projeto-backend.herokuapp.com/alunos`, {headers:  { 'Authorization': `Bearer ${localStorage.getItem('token')}` }})
+  .then(res => {
+    // const professor = res.data;
+    setAlunos(res.data);
+  })},[])
 
   console.log(aulas);
+  console.log(alunos);
 
   function handleInsert(event){
       event.preventDefault();
 
-      setSemestre('');
-      setCurso('');
+      setNota('');
       setAulaSelecionada('');
+      setAlunoSelecionada('');
 
-    turmaReq.Cadastrar({curso, semestre, _aulas})
+
+    NotaReq({nota ,_aula: _aulas, _aluno: _alunos})
       
-      alert('Parabéns ' + curso + semestre + ', seu login foi realizado com sucesso!');
+      alert('Parabéns ' + nota + _alunos + ', seu login foi realizado com sucesso!');
 
   }
   //#endregion
@@ -105,24 +112,30 @@ function CadastroMateria (){
         <>
         <Container component="main" maxWidth="xs">
             <div className={classes.paper}>
-                <form id="form" className={classes.form} label="Cadastrar Turma" onSubmit={handleInsert}>
-                    <Typography variant="h5" className={classes.titulo}>Cadastrar Turma</Typography>
+                <form id="form" className={classes.form} label="Cadastrar Nota" onSubmit={handleInsert}>
+                    <Typography variant="h5" className={classes.titulo}>Cadastrar Nota</Typography>
                         <Divider variant="middle" />
+                       
+
                         <Grid container spacing={1} alignItems="flex-end">
                           <Grid item md={1}>
-                            <PersonIcon />
+                            <DescriptionIcon />
                           </Grid>
                           <Grid item md={11} style={{marginTop: '9%'}}>
-                            <EstiloTextField id="semestre" label="Semestre" required value={semestre} onChange={e => setSemestre(e.target.value)}/>
-                          </Grid>
-                        </Grid>
-                        <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={1}>
-                            <PersonIcon />
-                          </Grid>
-                          <Grid item md={11} style={{marginTop: '5px'}}>
-                            <EstiloTextField id="curso" label="Curso" required value={curso} onChange={e => setCurso(e.target.value)}/>
-                          </Grid>
+                          {aulas && ( <EstiloDropDown value={nota} onChange={e => setNota(e.target.value)}
+                                autoWidth
+                                labelId="role-label"
+                                id="role"
+                                >
+                               <MenuItem value={"MB"}>MB</MenuItem>
+                               <MenuItem value={"B"}>B</MenuItem>
+                               <MenuItem value={"R"}>R</MenuItem>
+                               <MenuItem value={"I"}>I</MenuItem>
+
+
+                            </EstiloDropDown>)}
+                           
+                            </Grid>
                         </Grid>
                         
                         <Grid container spacing={1} alignItems="flex-end">
@@ -147,16 +160,18 @@ function CadastroMateria (){
                             </Grid>
                         </Grid>
 
-                        {/* <Grid container spacing={1} alignItems="flex-end">
+                        <Grid container spacing={1} alignItems="flex-end">
                           <Grid item md={1}>
                             <DescriptionIcon />
                           </Grid>
                           <Grid item md={11} style={{marginTop: '5px'}}>
-                          {materias && ( <EstiloDropDown label="Matéria" placeholder="Matreria" value={_materia} onChange={e => setMateriaSelecionada(e.target.value)}
-                                
+                          {alunos && ( <EstiloDropDown value={_alunos} onChange={e => setAlunoSelecionada(e.target.value)}
+                                autoWidth
+                                labelId="role-label"
+                                id="role"
                                 >
                                 {
-                                    materias.materias.map((item) => {
+                                    alunos.alunos.map((item) => {
                                     return <MenuItem value={item._id}>{item.nome}</MenuItem>
                                     })
                                      
@@ -165,8 +180,8 @@ function CadastroMateria (){
                             </EstiloDropDown>)}
                            
                             </Grid>
-                        </Grid> */}
-                        
+                        </Grid>
+
                         <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} >Cadastrar</Button>
                 </form>
             </div>
@@ -178,4 +193,4 @@ function CadastroMateria (){
     
 }
 
-export default CadastroMateria;
+export default CadastroNota;
