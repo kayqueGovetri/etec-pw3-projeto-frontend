@@ -1,10 +1,10 @@
 var axios = require("axios");
 
-function Cadastrar({nome, semestre, especialidade, curso}){
+function Cadastrar({nota, _aluno, _aula}){
 
-    console.log(nome, semestre, especialidade, curso, localStorage.getItem('token'));
-    axios.post("https://pw3-etec-projeto-backend.herokuapp.com/materia", 
-    {nome, semestre, especialidade, curso},
+    console.log(nota, _aluno, _aula, localStorage.getItem('token'));
+    axios.post("https://pw3-etec-projeto-backend.herokuapp.com/nota", 
+    {nota, _aluno, _aula},
     {headers:  { 'Authorization': `Bearer ${localStorage.getItem('token')}` }}
     ).then(function(data){
         console.log(data.data);

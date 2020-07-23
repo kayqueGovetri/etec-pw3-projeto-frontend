@@ -12,7 +12,7 @@ import CadastroProfessor from "../src/Paginas/CadastroProfessor"
 import CadastroMateria from "../src/Paginas/CadastroMateria"
 import CadastroAula from "../src/Paginas/CadastroAula"
 import CadastroTurma from "../src/Paginas/CadastroTurma"
-
+import CadastroNota from "../src/Paginas/CadastroNota"
 
 const Rotas = () => (
   <>
@@ -25,6 +25,7 @@ const Rotas = () => (
           <Route path="/materia/cadastro" exact={true} component={CadastroMateria} />
           <Route path="/aula/cadastro" exact={true} component={CadastroAula} />
           <Route path="/turma/cadastro" exact={true} component={CadastroTurma} />
+          <Route path="/nota/cadastro" exact={true} component={CadastroNota} />
 
 
       </Switch>

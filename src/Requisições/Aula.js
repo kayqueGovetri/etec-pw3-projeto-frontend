@@ -5,7 +5,7 @@ class AulaReq{
      Cadastrar({cargaHoraria, _professor, _materia}){
 
         console.log(cargaHoraria, _professor, _materia, localStorage.getItem('token'));
-        axios.post("http://localhost:3001/aula", 
+        axios.post("https://pw3-etec-projeto-backend.herokuapp.com/aula", 
         {cargaHoraria, _professor, _materia},
         {headers:  { 'Authorization': `Bearer ${localStorage.getItem('token')}` }}
         ).then(function(data){
