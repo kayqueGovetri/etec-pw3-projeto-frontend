@@ -11,32 +11,24 @@ import Tabela from '../Componentes/Tabela'
 
 const celulas = [
   'nome',
-  'rm',
-  'telefone',
-  'nascimento',
-  'matricula',
-  'cep',
-  'cpf',
+  'data nascimento',
   'email',
-  // 'curso',
-  // 'semestre'
+  'materia',
+  'especialidade',
 ]
 
-
-
-const ListagemAlunos = () => {
+const ListagemProfessores = () => {
     const [linhas, setLinhas] = useState([])
     useEffect(() => {
-      axios.get(`https://pw3-etec-projeto-backend.herokuapp.com/alunos`, {headers:  { 'Authorization': `Bearer ${localStorage.getItem('token')}` }})
+        axios.get(`https://pw3-etec-projeto-backend.herokuapp.com/professores`, {headers:  { 'Authorization': `Bearer ${localStorage.getItem('token')}` }})
       .then(res => { setLinhas(res.data);})}
     ,[])
-    console.log(linhas)
     return(
         <>
-        {linhas && linhas.alunos && (
+        {linhas && linhas.professores && (
           <Grid container spacing={1}>
             <Grid item md={11} style={{marginTop: '9%'}}>
-              <Tabela celulas={celulas} linhas={linhas && linhas.alunos} informacaoTabela="Aluno" width="100%"/>
+              <Tabela celulas={celulas} linhas={linhas && linhas.professores} informacaoTabela="Professor" width="100%"/>
             </Grid>
           </Grid>
         )}
@@ -44,4 +36,4 @@ const ListagemAlunos = () => {
     )
 }
 
-export default ListagemAlunos;
+export default ListagemProfessores;

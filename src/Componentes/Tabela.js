@@ -36,17 +36,17 @@ const Tabela = ({ linhas, celulas, informacaoTabela, width }) => {
         </TableHead>
         <TableBody>
             {informacaoTabela === 'Aluno' && linhas.map((linha) => (
-                <TableRow key={linha._id}>
-                <TableCell component="th" scope="row">
-                    {linha.nome}
-                </TableCell>
-                <TableCell align="right">{linha.rm}</TableCell>
-                <TableCell align="right">{linha.telefone}</TableCell>
-                <TableCell align="right">{Moment(linha.dataNascimento).format('DD/MM/YYYY')}</TableCell>
-                <TableCell align="right">{Moment(linha.dataMatricula).format('DD/MM/YYYY')}</TableCell>
-                <TableCell align="right">{linha.cep}</TableCell>
-                <TableCell align="right">{linha.cpfResponsavel}</TableCell>
-                <TableCell align="right">{linha.email}</TableCell>
+                <TableRow key={linha._id} >
+                    <TableCell component="th" scope="row">
+                        {linha.nome}
+                    </TableCell>
+                    <TableCell align="right">{linha.rm}</TableCell>
+                    <TableCell align="right">{linha.telefone}</TableCell>
+                    <TableCell align="right">{Moment(linha.dataNascimento).format('DD/MM/YYYY')}</TableCell>
+                    <TableCell align="right">{Moment(linha.dataMatricula).format('DD/MM/YYYY')}</TableCell>
+                    <TableCell align="right">{linha.cep}</TableCell>
+                    <TableCell align="right">{linha.cpfResponsavel}</TableCell>
+                    <TableCell align="right">{linha.email}</TableCell>
                 </TableRow>
             ))}
 
@@ -88,20 +88,9 @@ const Tabela = ({ linhas, celulas, informacaoTabela, width }) => {
                     <TableCell component="th" scope="row">
                         {linha.nome}
                     </TableCell>
-                    <TableCell align="right">{linha.dataNascimento}</TableCell>
+                    <TableCell align="right">{Moment(linha.dataNascimento).format('DD/MM/YYYY')}</TableCell>
                     <TableCell align="right">{linha.email}</TableCell>
-                    <TableCell align="right">{linha.especialidade}</TableCell>
-                </TableRow>
-            ))}
-
-            {informacaoTabela === "Usuario" && linhas.map((linha) => (
-                <TableRow key={linha._id}>
-                    <TableCell component="th" scope="row">
-                        {linha.nome}
-                    </TableCell>
-                    <TableCell align="right">{linha.dataNascimento}</TableCell>
-                    <TableCell align="right">{linha.email}</TableCell>
-                    <TableCell align="right">{linha.especialidade}</TableCell>
+                    {/* <TableCell align="right">{linha.especialidade}</TableCell> */}
                 </TableRow>
             ))}
         </TableBody>
@@ -116,5 +105,4 @@ Tabela.propTypes = {
     celulas: PropTypes.array.isRequired,
     linhas: PropTypes.array.isRequired,
     informacaoTabela: PropTypes.string.isRequired,
-    root: PropTypes.string.isRequired
 }
