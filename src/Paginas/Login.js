@@ -6,6 +6,7 @@ import { sizing } from '@material-ui/system';
 import { Face, Fingerprint } from '@material-ui/icons'
 import Logar from '../Requisições/Usuario.js'
 import { makeStyles } from '@material-ui/core/styles';
+import Axios from 'axios';
 
 // var axios = require("axios");
 
@@ -53,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Login() {
 
+    //#region states e chamada do Axios
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     
@@ -69,6 +71,8 @@ function Login() {
         alert('Parabéns ' + email + ', seu login foi realizado com sucesso!');
     }
 
+    //#endregion
+    
     document.body.style = 'background: #26a69a;';
 
     const classes = useStyles();
