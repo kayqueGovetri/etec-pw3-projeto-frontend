@@ -30,7 +30,6 @@ const Rotas = () => (
               <Route path="/turma/cadastro" exact={true} component={CadastroTurma} />
             </>)
           }
-          {!localStorage.getItem('token') && (<Route path="*" render={() => <Redirect to="/login" /> }/>) }
       </Switch>
     </BrowserRouter>
   </>
