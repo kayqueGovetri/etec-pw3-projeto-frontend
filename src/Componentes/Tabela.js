@@ -47,8 +47,6 @@ const Tabela = ({ linhas, celulas, informacaoTabela, width }) => {
                 <TableCell align="right">{linha.cep}</TableCell>
                 <TableCell align="right">{linha.cpfResponsavel}</TableCell>
                 <TableCell align="right">{linha.email}</TableCell>
-                {/* <TableCell align="right">{linha.turma.curso}</TableCell>
-                <TableCell align="right">{linha.turma.semestre}</TableCell> */}
                 </TableRow>
             ))}
 
@@ -80,6 +78,7 @@ const Tabela = ({ linhas, celulas, informacaoTabela, width }) => {
                     <TableCell align="right">{linha.materia.nome}</TableCell>
                     <TableCell align="right">{linha.professor.nome}</TableCell>
                     <TableCell align="right">{linha.materia.nome}</TableCell>
+                    <TableCell align="right">{linha.materia.semestre}</TableCell>
                     <TableCell align="right">{linha.nota}</TableCell>
                 </TableRow>
             ))}
