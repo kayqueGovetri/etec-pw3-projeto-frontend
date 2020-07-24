@@ -9,16 +9,17 @@ import React from 'react';
 import Tabela from '../Componentes/Tabela'
 
 const celulas = [
-  'nome',
-  'rm',
-  'telefone',
-  'dataNascimento',
-  'dataMatricula',
-  'cep',
-  'cpfResponsavel',
-  'email',
+  'Nome',
+  'RM',
+  'Telefone',
+  'Data Nascimento',
+  'Data Matricula',
+  'CEP',
+  'CPF Responsavel',
+  'E-mail',
   // 'curso',
   // 'semestre'
+  'Ação'
 ]
 const linhas = [
   {
