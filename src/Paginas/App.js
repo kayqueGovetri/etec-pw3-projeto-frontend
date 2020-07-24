@@ -15,7 +15,6 @@ const useStyles = makeStyles({
 });
 
 const App = () => {
-  const classes = useStyles()
   return (
     <Grid
       container
