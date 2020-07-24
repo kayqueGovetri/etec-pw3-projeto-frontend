@@ -21,7 +21,7 @@ const celulas = [
 const ListagemNotas = () => {
     const [linhas, setLinhas] = useState([])
     useEffect(() => {
-      axios.get(`http://localhost:3001/notas`, {headers:  { 'Authorization': `Bearer ${localStorage.getItem('token')}` }})
+      axios.get(`https://pw3-etec-projeto-backend.herokuapp.com/notas`, {headers:  { 'Authorization': `Bearer ${localStorage.getItem('token')}` }})
       .then(res => { setLinhas(res.data);})}
     ,[])
     return(

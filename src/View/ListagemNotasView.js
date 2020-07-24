@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
-import CadastroTurma from '../Paginas/CadastroTurma.js'
+import React from 'react';
+import ListagemNotas from '../Paginas/ListagemNotas.js'
 import { Grid } from '@material-ui/core'
 import SideMenu from '../Componentes/SideMenu'
 
+
 // var axios = require("axios");
-const CadastroTurmaView = () =>{
+const ListagemNotasView = () =>{
 
     return (
        <>
@@ -13,7 +14,7 @@ const CadastroTurmaView = () =>{
             <SideMenu />
           </Grid>
           <Grid item md={8}>
-            <CadastroTurma />
+            <ListagemNotas />
           </Grid>
         </Grid>
        </>
@@ -21,4 +22,4 @@ const CadastroTurmaView = () =>{
 }
 
 
-export default CadastroTurmaView;
+export default ListagemNotasView;

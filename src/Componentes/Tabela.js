@@ -94,11 +94,11 @@ const Tabela = ({ linhas, celulas, informacaoTabela, width }) => {
                     <TableCell component="th" scope="row">
                         {linha.aluno.nome}
                     </TableCell>
+                    {console.log(linha)}
                     <TableCell align="right">{linha.aluno.rm}</TableCell>
-                    <TableCell align="right">{linha.materia.nome}</TableCell>
-                    <TableCell align="right">{linha.professor.nome}</TableCell>
-                    <TableCell align="right">{linha.materia.nome}</TableCell>
-                    <TableCell align="right">{linha.materia.semestre}</TableCell>
+                    <TableCell align="right">{linha.aula.professor.nome}</TableCell>
+                    <TableCell align="right">{linha.aula.materia.nome}</TableCell>
+                    <TableCell align="right">{linha.aula.materia.semestre}</TableCell>
                     <TableCell align="right">{linha.nota}</TableCell>
                 </TableRow>
             ))}

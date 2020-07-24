@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 import {
     Table,
     TableBody,
@@ -70,13 +70,13 @@ function SideMenu (){
             <Box margin={1}>
               <Table size="small">
                 <TableBody>
-                    <Link to = "/Aluno/Cadastro" className={classes.link}>Cadastrar</Link>
+                    <Link to = "/aluno/cadastro" className={classes.link}>Cadastrar</Link>
                 </TableBody>
                 <TableBody>
                     Informações do Aluno
                 </TableBody>
                 <TableBody>
-                    <Link to = "/Aluno/Listagem" className={classes.link}>Listagem</Link>
+                    <Link to = "/aluno/listagem" className={classes.link}>Listagem</Link>
                 </TableBody>
               </Table>
             </Box>
@@ -99,13 +99,13 @@ function SideMenu (){
             <Box margin={1}>
               <Table size="small">
                 <TableBody>
-                    Cadastrar
+                  <Link to = "/professor/cadastro" className={classes.link}>Cadastrar</Link>
                 </TableBody>
                 <TableBody>
                     Informações do Professor
                 </TableBody>
                 <TableBody>
-                    Tabela
+                  <Link to = "/professor/listagem" className={classes.link}>Tabela</Link>
                 </TableBody>
               </Table>
             </Box>
@@ -128,13 +128,13 @@ function SideMenu (){
             <Box margin={1}>
               <Table size="small">
                 <TableBody>
-                    Cadastrar
+                  <Link to = "/aula/cadastro" className={classes.link}>Cadastrar</Link>
                 </TableBody>
                 <TableBody>
                     Informações da Aula
                 </TableBody>
                 <TableBody>
-                    Tabela
+                  <Link to = "/aula/listagem" className={classes.link}>Tabela</Link>
                 </TableBody>
               </Table>
             </Box>
@@ -157,13 +157,13 @@ function SideMenu (){
             <Box margin={1}>
               <Table size="small">
                 <TableBody>
-                    Cadastrar
+                  <Link to = "/materia/cadastro" className={classes.link}>Cadastrar</Link>
                 </TableBody>
                 <TableBody>
                     Informações da Matéria
                 </TableBody>
                 <TableBody>
-                    Tabela
+                  <Link to = "/professor/listagem" className={classes.link}>Tabela</Link>
                 </TableBody>
               </Table>
             </Box>
@@ -186,13 +186,13 @@ function SideMenu (){
             <Box margin={1}>
               <Table size="small">
                 <TableBody>
-                    Cadastrar
+                  <Link to = "/turma/cadastro" className={classes.link}>Cadastrar</Link>
                 </TableBody>
                 <TableBody>
                     Informações da Turma
                 </TableBody>
                 <TableBody>
-                    Tabela
+                  <Link to = "/turma/listagem" className={classes.link}>Tabela</Link>
                 </TableBody>
               </Table>
             </Box>
@@ -215,13 +215,13 @@ function SideMenu (){
             <Box margin={1}>
               <Table size="small">
                 <TableBody>
-                    Cadastrar
+                  <Link to = "/nota/cadastro" className={classes.link}>Cadastrar</Link>
                 </TableBody>
                 <TableBody>
                     Detalhes Notas
                 </TableBody>
                 <TableBody>
-                    Tabela
+                  <Link to = "/nota/listagem" className={classes.link}>Tabela</Link>
                 </TableBody>
               </Table>
             </Box>

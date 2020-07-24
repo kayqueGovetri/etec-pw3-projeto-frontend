@@ -1,16 +1,22 @@
-import React, {useState} from 'react';
+import React from 'react';
 import CadastroProfessor from '../Paginas/CadastroProfessor.js'
-import {
-    Redirect, Link
-  } from "react-router-dom";
-  
+import { Grid } from '@material-ui/core'
+import SideMenu from '../Componentes/SideMenu'
+
 
 // var axios = require("axios");
 const CadastroProfessorView = () =>{
 
     return (
        <>
-        <CadastroProfessor/>
+        <Grid container direction="row">
+          <Grid item md={4}>
+            <SideMenu />
+          </Grid>
+          <Grid item md={8}>
+            <CadastroProfessor />
+          </Grid>
+        </Grid>
        </>
     );
 }

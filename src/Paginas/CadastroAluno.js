@@ -65,7 +65,6 @@ function CadastroAluno (){
 
     const useStyles = makeStyles((theme) => ({
       paper: {
-        marginTop: theme.spacing(10),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -109,9 +108,6 @@ function CadastroAluno (){
                     <Typography variant="h5" className={classes.titulo}>Cadastrar Aluno</Typography>
                         <Divider variant="middle" />
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={1}>
-                            <PersonIcon />
-                          </Grid>
                           <Grid item md={11} style={{marginTop: '9%'}}>
                             <EstiloTextField id="nome" label="Nome" required value={nome} onChange={e => setNome(e.target.value)}/>
                           </Grid>
