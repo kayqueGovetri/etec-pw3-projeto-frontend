@@ -98,6 +98,7 @@ const Tabela = ({ linhas, celulas, informacaoTabela, width }) => {
                     <TableCell align="right">{linha.materia.nome}</TableCell>
                     <TableCell align="right">{linha.professor.nome}</TableCell>
                     <TableCell align="right">{linha.materia.nome}</TableCell>
+                    <TableCell align="right">{linha.materia.semestre}</TableCell>
                     <TableCell align="right">{linha.nota}</TableCell>
                 </TableRow>
             ))}
