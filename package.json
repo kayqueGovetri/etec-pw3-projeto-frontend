@@ -1,6 +1,9 @@
 {
   "name": "etec-pw3-projeto-frontend",
   "version": "0.1.0",
+  "engines": {
+    "node": "12.18.2"
+  },
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -9,7 +12,10 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
     "moment": "^2.27.0",
+    "path": "^0.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-input-mask": "^2.0.4",
@@ -17,7 +23,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
