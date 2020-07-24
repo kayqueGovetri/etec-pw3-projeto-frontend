@@ -27,7 +27,7 @@ const Rotas = () => (
           <Route path="/login" exact={true} component={Login} />
           {localStorage.getItem('token') && (
             <>
-              <Route path="/" exact={true} component={App} />
+              <Route path="/" exact={true} component={ListagemAlunos} />
 
               <Route path="/aluno/cadastro" exact={true} component={CadastroAluno} />
               <Route path="/aluno/listagem" exact={true} component={ListagemAlunos} />
@@ -47,6 +47,7 @@ const Rotas = () => (
               <Route path="/nota/listagem" exact={true} component={ListagemNotas} />
             </>)
           }
+          <Route path="/" exact={true} component={ListagemAlunos} />
       </Switch>
     </BrowserRouter>
   </>
