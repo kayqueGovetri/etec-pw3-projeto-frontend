@@ -65,6 +65,7 @@ function CadastroAluno (){
 
     const useStyles = makeStyles((theme) => ({
       paper: {
+        margin: 'auto',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -77,6 +78,7 @@ function CadastroAluno (){
         paddingTop: '6%',
         padding:'1%',
         borderRadius: 20,
+        marginRight: '90%',
       },
       submit: {
         margin: theme.spacing(4, 0, 4),
@@ -105,50 +107,51 @@ function CadastroAluno (){
         <Container component="main" maxWidth="xs">
             <div className={classes.paper}>
                 <form id="form" className={classes.form} label="Cadastrar Aluno" onSubmit={handleInsert}>
+                  <PersonIcon className={classes.icon} style={{ fontSize: 40 }}/>
                     <Typography variant="h5" className={classes.titulo}>Cadastrar Aluno</Typography>
                         <Divider variant="middle" />
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={11} style={{marginTop: '9%'}}>
+                          <Grid item md={12} style={{marginTop: '9%'}}>
                             <EstiloTextField id="nome" label="Nome" required value={nome} onChange={e => setNome(e.target.value)}/>
                           </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={11} style={{marginTop: '5px'}}>
+                          <Grid item md={12} style={{marginTop: '1.7%'}}>
                             <EstiloMask id="Telefone" label="Telefone" mask={'(99)99999-9999'} required value={telefone} onChange={e => setTelefone(e.target.value)}/>
                           </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={11} style={{marginTop: '5px'}}>
+                          <Grid item md={12} style={{marginTop: '1.7%'}}>
                             <EstiloTextField id="rm" label="RM" required value={rm} onChange={e => setRm(e.target.value)}/>
                           </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={11} style={{marginTop: '5px'}}>
+                          <Grid item md={12} style={{marginTop: '1.7%'}}>
                             <EstiloMask id="dataNascimento" label="Data Nascimento" mask={'99/99/9999'} required value={dataNascimento} onChange={e => setDataNascimento(e.target.value)}/>
                           </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={11} style={{marginTop: '5px'}}>
+                          <Grid item md={12} style={{marginTop: '1.7%'}}>
                             <EstiloMask id="dataMatricula" label="Data Matricula" mask={'99/99/9999'} required value={dataMatricula} onChange={e => setDataMatricula(e.target.value)}/>
                           </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={11} style={{marginTop: '5px'}}>
+                          <Grid item md={12} style={{marginTop: '1.7%'}}>
                             <EstiloMask id="CEP" label="CEP" mask={'99999-999'} required value={cep} onChange={e => setCep(e.target.value)}/>
                           </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={11} style={{marginTop: '5px'}}>
+                          <Grid item md={12} style={{marginTop: '1.7%'}}>
                             <EstiloMask id="cpf" label="CPF Responsavel" mask={'999.999.999-99'} required value={cpfResponsavel} onChange={e => setCpfResponsavel(e.target.value)}/>
                           </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={11} style={{marginTop: '5px'}}>
+                          <Grid item md={12} style={{marginTop: '1.7%'}}>
                             <EstiloTextField id="email" label="E-mail" placeholder="exemplo@exemplo.com" type="email" required value={email} onChange={e => setEmail(e.target.value)}/>
                           </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={11} style={{marginTop: '5px'}}>
+                          <Grid item md={12} style={{marginTop: '1.7%'}}>
 
                           {turma && ( <EstiloDropDown value={_turma} onChange={e => setTurmaSelecionada(e.target.value)}
                                 autoWidth

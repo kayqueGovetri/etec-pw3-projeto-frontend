@@ -19,6 +19,7 @@ import ListagemAulas from '../src/View/ListagemAulasView'
 import ListagemTurmas from '../src/View/ListagemTurmasView'
 import ListagemProfessores from '../src/View/ListagemProfessoresView'
 import ListagemNotas from '../src/View/ListagemNotasView'
+import AtualizarAluno from '../src/Paginas/AtualizarAluno'
 
 const Rotas = () => (
   <>
@@ -31,6 +32,7 @@ const Rotas = () => (
 
               <Route path="/aluno/cadastro" exact={true} component={CadastroAluno} />
               <Route path="/aluno/listagem" exact={true} component={ListagemAlunos} />
+              <Route path="/aluno/Atualizar" exact={true} component={AtualizarAluno} />
               
               <Route path="/professor/cadastro" exact={true} component={CadastroProfessor} />
               <Route path="/professor/listagem" exact={true} component={ListagemProfessores} />
