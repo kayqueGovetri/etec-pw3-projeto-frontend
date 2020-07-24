@@ -1,13 +1,29 @@
 import React from 'react';
-import { Grid} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import { Card, Grid} from "@material-ui/core";
+import Login from "../Paginas/Login"
 
-import ListagemProfessores from './ListagemProfessores'
+const useStyles = makeStyles({
+  root: {
+    position: "absolute",
+    height: 200,
+    width: "50%",
+    top: 0,
+    background: "#7159C1"
+    
+  },
+});
 
 const App = () => {
   return (
-    <Grid container>
-      <Grid item xs={12} md={12}>
-        <ListagemProfessores />
+    <Grid
+      container
+      direction="column"
+      justify="flex-start"
+      alignItems="center"
+                        >
+      <Grid item xs={12}>
+        Teste
       </Grid>
     </Grid>
   )
