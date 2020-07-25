@@ -128,7 +128,7 @@ function Login() {
                 </Paper>
             </Grid>
             <Grid item xls={0} sm={4} xlg={5}/>
-            {redirect && (<Redirect to="/" push />)}
+            {redirect && (<Redirect to="/aluno/listagem" push />)}
         </Grid>
     );
 }
