@@ -1,3 +1,7 @@
+PARA ACESSAR O SITE É NECESSÁRIO FAZER O LOGIN:
+  EMAIL: Teste2@teste.com
+  SENHA: teste123
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
