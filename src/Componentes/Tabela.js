@@ -13,18 +13,14 @@ import {
     Typography,
     Divider,
 } from '@material-ui/core'
-import DeleteRoundedIcon from '@material-ui/icons/DeleteRounded';
-import CreateIcon from '@material-ui/icons/Create';
-import IconButton from '@material-ui/core/IconButton';
 
 import { makeStyles } from '@material-ui/core/styles'
 
 const Tabela = ({ linhas, celulas, informacaoTabela, width }) => {
     const useStyles = makeStyles({
         root: {
-            paddingLeft: '1%',
-            paddingRight: '1%',
-            margin: 'auto',
+            marginLeft: '-15%',
+            marginTop: '7%',
           '&':{
             width,
             minWidth: 900,
@@ -64,14 +60,6 @@ const Tabela = ({ linhas, celulas, informacaoTabela, width }) => {
                     <TableCell align="left">{linha.email}</TableCell>
                     {/* <TableCell align="left">{linha.turma.curso}</TableCell>
                     <TableCell align="left">{linha.turma.semestre}</TableCell> */}
-                     <TableCell align="center">
-                        <IconButton size="small">
-                            <CreateIcon/>
-                        </IconButton>
-                        <IconButton size="small">
-                            <DeleteRoundedIcon/>
-                        </IconButton>
-                    </TableCell>
                 </TableRow>
             ))}
             

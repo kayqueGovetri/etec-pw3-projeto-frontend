@@ -79,6 +79,7 @@ function CadastroAluno (){
         padding:'1%',
         borderRadius: 20,
         marginRight: '90%',
+        marginTop: '40%',
       },
       submit: {
         margin: theme.spacing(4, 0, 4),

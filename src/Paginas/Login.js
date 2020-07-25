@@ -10,7 +10,8 @@ import Axios from 'axios';
 import {
     Redirect, Link
   } from "react-router-dom";
-  
+
+  import EstiloTextField from '../Componentes/EstiloTextField';
 
 // var axios = require("axios");
 
@@ -22,11 +23,14 @@ const useStyles = makeStyles((theme) => ({
     padding: {
         padding: theme.spacing.unit
     },
-    top: {
-        top: 15
+    icon: {
+        margin: theme.spacing(0, 23, 0),
+        color: theme.palette.primary.main,
+        backgroundColor: theme.palette.info.main,
+        borderRadius: 20,
     },
     paper: {
-      marginTop: theme.spacing(10),
+      margin: 'auto',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -41,8 +45,9 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: 20,
     },
     submit: {
-      margin: theme.spacing(4, 0, 4),
-      padding: '2.5%',
+        margin: theme.spacing(6, 0, 0),
+        padding: '3%',
+        borderRadius: 15,
     },
     text: {
       margin: theme.spacing(3, 0, 0.5),
@@ -82,78 +87,46 @@ function Login() {
 
     const classes = useStyles();
     return (
-        <Grid container justify="center" style={{ marginTop: '150px' }}> 
+        <Grid container justify="center" style={{marginTop: '10%'}}> 
             <Grid item xls={0} sm={4} xlg={5}/>
-
-            <Grid item xls={12} sm={4} xlg={2}>
+            <Grid item md={3}>
                 <Paper className={classes.paper}>
-
                 <form onSubmit = {handleInsert} className={classes.form}>
                         <div className={classes.margin}>
-
                             <Grid container spacing={8} alignItems="flex-end">
-                            
-                                <Grid item md={true} sm={true} xs={true}>
-                                    <Typography
-                                        align="center"
-                                        color="textPrimary"
-                                        variant="h4"
-                                    >
+                                <Grid item md={12}>
+                                <Face className={classes.icon} style={{ fontSize: 40 }}/>
+                                    <Typography align="center" color="textPrimary" variant="h4">
                                         Bem vindo ao NSA
                                     </Typography>
                                 </Grid>
                             </Grid>
-                            
                             <Grid container spacing={8}  alignItems="flex-end">
-                            
-                                <Grid item md={true} sm={true} xs={true}>
-                                        <InputLabel  justify="flex-start" id="txt-role">Entrar como:</InputLabel>
-                                            <Select
-                                                autoWidth
-                                                labelId="role-label"
-                                                id="role"
-                                                >
+                                <Grid item md={12}>
+                                        <InputLabel justify="flex-start" id="txt-role">Entrar como:</InputLabel>
+                                            <Select autoWidth labelId="role-label" id="role">
                                                 <MenuItem value={10}>Aluno</MenuItem>
                                                 <MenuItem value={20}>Professor</MenuItem>
                                                 <MenuItem value={30}>Secretária</MenuItem>
                                             </Select> 
                                     </Grid> 
                                 </Grid>
-                            
-                            
                             <Grid container spacing={5} alignItems="flex-end">
-                                <Grid item>
-                                    <Face />
-                                </Grid>
                                 <Grid item md={true} sm={true} xs={true}>
-                                    <TextField id="email" label="E-mail" type="email" fullWidth autoFocus required  value={email} onChange={e => setEmail(e.target.value)}/>
+                                    <EstiloTextField id="email" label="E-mail" type="email" fullWidth autoFocus required  value={email} onChange={e => setEmail(e.target.value)}/>
                                 </Grid>
                             </Grid>
-
                             <Grid container spacing={5} alignItems="flex-end">
-                                <Grid item>
-                                    <Fingerprint />
-                                </Grid>
                                 <Grid item md={true} sm={true} xs={true}>
-                                    <TextField id="senha" label="Senha" type="password" fullWidth required  value={senha} onChange={e => setSenha(e.target.value)}/>
+                                    <EstiloTextField id="senha" label="Senha" type="password" fullWidth required  value={senha} onChange={e => setSenha(e.target.value)}/>
                                 </Grid>
                             </Grid>
 
-                            <Grid container spacing={10} alignItems="flex-end"><Grid item></Grid></Grid>
-                            <Grid container spacing={5} alignItems="flex-end"><Grid item></Grid></Grid>
-
-                            <Grid container justify="flex-end" style={{ marginTop: '10px' }}>
-                                <Button type="submit" fullWidth variant="contained" color="primary" style={{ textTransform: "none" } }>Login</Button>
-                            </Grid>
-
-                            <Grid container spacing={10} alignItems="flex-end"><Grid item></Grid></Grid>
-
+                            <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} style={{ textTransform: "none" } }>Login</Button>
                         </div>
                     </form>
                 </Paper>
-
             </Grid>
-            
             <Grid item xls={0} sm={4} xlg={5}/>
             {redirect && (<Redirect to="/" push />)}
         </Grid>

@@ -89,6 +89,8 @@ function CadastroMateria (){
         paddingTop: '6%',
         padding:'1%',
         borderRadius: 20,
+        marginRight: '90%',
+        marginTop: '20%',
       },
       submit: {
         margin: theme.spacing(4, 0, 4),
@@ -102,6 +104,12 @@ function CadastroMateria (){
       titulo:{
         textAlign: 'center',
         marginBottom: '5%',
+      },
+      icon: {
+        margin: theme.spacing(0, 23, 0),
+        color: theme.palette.primary.main,
+        backgroundColor: theme.palette.info.main,
+        borderRadius: 20,
       }
     }));
 
@@ -112,23 +120,18 @@ function CadastroMateria (){
         <Container component="main" maxWidth="xs">
             <div className={classes.paper}>
                 <form id="form" className={classes.form} label="Cadastrar Aula" onSubmit={handleInsert}>
+                <PersonIcon className={classes.icon} style={{ fontSize: 40 }}/>
                     <Typography variant="h5" className={classes.titulo}>Cadastrar Aula</Typography>
                         <Divider variant="middle" />
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={1}>
-                            <PersonIcon />
-                          </Grid>
-                          <Grid item md={11} style={{marginTop: '9%'}}>
+                          <Grid item md={12} style={{marginTop: '9%'}}>
                             <EstiloTextField id="cargaHoraria" label="Carga Horária" required value={cargaHoraria} onChange={e => setCargaHoraria(e.target.value)}/>
                           </Grid>
                         </Grid>
                         
                        
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={1}>
-                            <DescriptionIcon />
-                          </Grid>
-                          <Grid item md={11} style={{marginTop: '5px'}}>
+                          <Grid item md={12} style={{marginTop: '5px'}}>
                           {professores && ( <EstiloDropDown value={_professor} onChange={e => setProfessorSelecionado(e.target.value)}
                                 autoWidth
                                 labelId="role-label"
@@ -147,10 +150,7 @@ function CadastroMateria (){
                         </Grid>
 
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={1}>
-                            <DescriptionIcon />
-                          </Grid>
-                          <Grid item md={11} style={{marginTop: '5px'}}>
+                          <Grid item md={12} style={{marginTop: '5px'}}>
                           {materias && ( <EstiloDropDown label="Matéria" placeholder="Matreria" value={_materia} onChange={e => setMateriaSelecionada(e.target.value)}
                                 
                                 >

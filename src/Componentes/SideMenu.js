@@ -8,7 +8,9 @@ import {
     Table,
     TableBody,
     TableCell,
-    TableRow
+    TableRow,
+    Typography,
+    Grid
 } from '@material-ui/core';
 import PeopleIcon from '@material-ui/icons/People';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
@@ -22,9 +24,11 @@ import CreateIcon from '@material-ui/icons/Create';
 import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 import PersonIcon from '@material-ui/icons/Person';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
+import Logo from '../logo.png'
 
 function SideMenu (){
     document.body.style.backgroundColor = '#e5e5ff';
+
     const useRowStyles = makeStyles({
         root: {
           '& > *': {
@@ -36,12 +40,27 @@ function SideMenu (){
         inside: {
             backgroundColor: '#DCDCDC',
         },
+        header: {
+            backgroundColor: 'whitesmoke',
+            paddingLeft: '100%',
+            paddingRight: '100%',
+            paddingBottom: '10%',
+            margin: '0',
+            width: '100%',
+            marginTop: '-2%',
+        },
         link:{
             textDecoration: 'none',
             color: '#054F77',
             active: 'secondary',
             marginBottom: '5%',
         },
+        logo:{
+          position: 'absolute',
+          width: '6%',
+          padding: '1%',
+          marginLeft: '-33%',
+        }
       });
 
     const [aluno, setAluno] = React.useState(false);
@@ -54,6 +73,10 @@ function SideMenu (){
     const classes = useRowStyles();
     return(
         <>
+        <header className={classes.header}>
+          <img src={Logo} alt="Logo" className={classes.logo}/>
+          <Typography variant="h5" style={{textAlign: "center", paddingTop: "10%"}}>SISTEMA ESCOLA</Typography>
+      </header>
         <TableRow className={classes.root}>
         <TableCell>
           <IconButton aria-label="expand row" size="small" onClick={() => setAluno(!aluno)}>

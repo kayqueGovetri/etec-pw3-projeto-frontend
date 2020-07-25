@@ -60,6 +60,8 @@ function CadastroMateria (){
         paddingTop: '6%',
         padding:'1%',
         borderRadius: 20,
+        marginRight: '90%',
+        marginTop: '30%',
       },
       submit: {
         margin: theme.spacing(4, 0, 4),
@@ -73,6 +75,12 @@ function CadastroMateria (){
       titulo:{
         textAlign: 'center',
         marginBottom: '5%',
+      },
+      icon: {
+        margin: theme.spacing(0, 23, 0),
+        color: theme.palette.primary.main,
+        backgroundColor: theme.palette.info.main,
+        borderRadius: 20,
       }
     }));
 
@@ -82,38 +90,27 @@ function CadastroMateria (){
         <Container component="main" maxWidth="xs">
             <div className={classes.paper}>
                 <form id="form" className={classes.form} label="Cadastrar Materia" onSubmit={handleInsert}>
+                <PersonIcon className={classes.icon} style={{ fontSize: 40 }}/>
                     <Typography variant="h5" className={classes.titulo}>Cadastrar Materia</Typography>
                         <Divider variant="middle" />
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={1}>
-                            <PersonIcon />
-                          </Grid>
-                          <Grid item md={11} style={{marginTop: '9%'}}>
+                          <Grid item md={12} style={{marginTop: '9%'}}>
                             <EstiloTextField id="nome" label="Nome" required value={nome} onChange={e => setNome(e.target.value)}/>
                           </Grid>
                         </Grid>
                         
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={1}>
-                            <EmailIcon />
-                          </Grid>
-                          <Grid item md={11} style={{marginTop: '5px'}}>
+                          <Grid item md={12} style={{marginTop: '5px'}}>
                             <EstiloTextField id="semestre" label="Semestre" required value={semestre} onChange={e => setSemestre(e.target.value)}/>
                           </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={1}>
-                            <DescriptionIcon />
-                          </Grid>
-                          <Grid item md={11} style={{marginTop: '5px'}}>
+                          <Grid item md={12} style={{marginTop: '5px'}}>
                             <EstiloTextField id="especialidade" label="Especialidade" required value={especialidade} onChange={e => setEspecialidade(e.target.value)}/>
                           </Grid>
                         </Grid>
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={1}>
-                            <DescriptionIcon />
-                          </Grid>
-                          <Grid item md={11} style={{marginTop: '5px'}}>
+                          <Grid item md={12} style={{marginTop: '5px'}}>
                             <EstiloTextField id="curso" label="Curso" required value={curso} onChange={e => setCurso(e.target.value)}/>
                           </Grid>
                         </Grid>

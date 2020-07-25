@@ -90,6 +90,8 @@ function CadastroNota (){
         paddingTop: '6%',
         padding:'1%',
         borderRadius: 20,
+        marginRight: '90%',
+        marginTop: '30%',
       },
       submit: {
         margin: theme.spacing(4, 0, 4),
@@ -103,6 +105,12 @@ function CadastroNota (){
       titulo:{
         textAlign: 'center',
         marginBottom: '5%',
+      },
+      icon: {
+        margin: theme.spacing(0, 23, 0),
+        color: theme.palette.primary.main,
+        backgroundColor: theme.palette.info.main,
+        borderRadius: 20,
       }
     }));
 
@@ -113,15 +121,11 @@ function CadastroNota (){
         <Container component="main" maxWidth="xs">
             <div className={classes.paper}>
                 <form id="form" className={classes.form} label="Cadastrar Nota" onSubmit={handleInsert}>
+                <PersonIcon className={classes.icon} style={{ fontSize: 40 }}/>
                     <Typography variant="h5" className={classes.titulo}>Cadastrar Nota</Typography>
                         <Divider variant="middle" />
-                       
-
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={1}>
-                            <DescriptionIcon />
-                          </Grid>
-                          <Grid item md={11} style={{marginTop: '9%'}}>
+                          <Grid item md={12} style={{marginTop: '9%'}}>
                           {aulas && ( <EstiloDropDown value={nota} onChange={e => setNota(e.target.value)}
                                 autoWidth
                                 labelId="role-label"
@@ -131,18 +135,12 @@ function CadastroNota (){
                                <MenuItem value={"B"}>B</MenuItem>
                                <MenuItem value={"R"}>R</MenuItem>
                                <MenuItem value={"I"}>I</MenuItem>
-
-
                             </EstiloDropDown>)}
-                           
                             </Grid>
                         </Grid>
                         
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={1}>
-                            <DescriptionIcon />
-                          </Grid>
-                          <Grid item md={11} style={{marginTop: '5px'}}>
+                          <Grid item md={12} style={{marginTop: '5px'}}>
                           {aulas && ( <EstiloDropDown value={_aulas} onChange={e => setAulaSelecionada(e.target.value)}
                                 autoWidth
                                 labelId="role-label"
@@ -161,10 +159,7 @@ function CadastroNota (){
                         </Grid>
 
                         <Grid container spacing={1} alignItems="flex-end">
-                          <Grid item md={1}>
-                            <DescriptionIcon />
-                          </Grid>
-                          <Grid item md={11} style={{marginTop: '5px'}}>
+                          <Grid item md={12} style={{marginTop: '5px'}}>
                           {alunos && ( <EstiloDropDown value={_alunos} onChange={e => setAlunoSelecionada(e.target.value)}
                                 autoWidth
                                 labelId="role-label"

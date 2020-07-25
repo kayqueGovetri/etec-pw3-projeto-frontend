@@ -20,7 +20,6 @@ const celulas = [
   'E-mail',
   // 'curso',
   // 'semestre'
-  'Ação'
 ]
 
 
